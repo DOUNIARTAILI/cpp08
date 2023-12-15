@@ -12,10 +12,23 @@
 
 #include <iostream>
 
+// template <typename T>
+// int easyfind(T container, int value){
+//     typename T::iterator it;
+//     it = std::find(container.begin(), container.end(), value);
+//     if (it == container.end())
+//         throw std::out_of_range("Value not found in container");
+//     return *it;
+// }
+
 template <typename T>
-typename T::const_iterator easyfind(const T& container, int value){
-    int result = std::find(container.begin(), container.end(), value);
-    if (result == container.end())
+int easyfind(T container, int value){
+    typename T::iterator it;
+    for (it = container.begin(); it != container.end(); it++){
+        if (*it == value)
+            return *it;
+    }
+    if (it == container.end())
         throw std::out_of_range("Value not found in container");
-    return result;
+    return 0;
 }

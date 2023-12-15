@@ -21,11 +21,11 @@ int main() {
     numbers.push_back(6);
     numbers.push_back(9);
 
-    int searchValue = 9;
+    int searchValue = -9;
 
     try {
         int result = easyfind(numbers, searchValue);
-        std::cout << "Value " << searchValue << " found at index: " << result << std::endl;
+        std::cout << "Value found : " << result << std::endl;
     } catch (const std::out_of_range& e) {
         std::cerr << e.what() << std::endl;
     }
