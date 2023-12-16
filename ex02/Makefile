@@ -5,17 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/16 17:39:00 by drtaili           #+#    #+#              #
-#    Updated: 2023/12/16 17:39:03 by drtaili          ###   ########.fr        #
+#    Created: 2023/12/16 17:38:03 by drtaili           #+#    #+#              #
+#    Updated: 2023/12/16 18:43:29 by drtaili          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp Span.cpp
-
+SRC = main.cpp 
 OBJS = $(SRC:.cpp=.o)
 
-NAME = Span
-HEADERS = Span.hpp  
+NAME = MutantStack
+HEADERS = MutantStack.hpp 
 CC = c++
 
 RM = rm -rf

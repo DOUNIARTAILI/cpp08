@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "iterator": "cpp",
-        "stdexcept": "cpp"
+        "stdexcept": "cpp",
+        "stack": "cpp",
+        "vector": "cpp",
+        "initializer_list": "cpp"
     }
 }
