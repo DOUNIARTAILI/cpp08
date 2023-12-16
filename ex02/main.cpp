@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:39:32 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/16 18:44:28 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/16 20:42:06 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,13 @@ int main()
         ++it;
     }
     std::cout << "-----------------------" << std::endl;
-    // std::stack<int> s(mstack);
-    // s.push(5);
-    // s.push(17);
-    // std::cout << s.top() << std::endl;
-    // s.pop();
-    // std::cout << s.size() << std::endl;
-    // s.push(3);
-    // s.push(5);
-    // s.push(737);
+    std::cout << mstack.size() << std::endl;
+    std::stack<int> s(mstack);
+    s.push(5);
+    s.push(17);
+    std::cout << s.top() << std::endl;
+    s.pop();
+    std::cout << s.size() << std::endl;
+    
     return 0;
 }
