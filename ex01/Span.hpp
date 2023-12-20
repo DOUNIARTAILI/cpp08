@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:39:14 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/16 17:39:17 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/20 23:51:49 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ public:
 	}
 };
 
+class rangetoobig: public std::exception
+{
+public:
+	virtual const char* what() const throw()
+	{
+		return "Range too big !";
+	}
+};
+
 class Span{
 public: 
     Span();
@@ -46,7 +55,8 @@ public:
     void addNumber(int nb);
     unsigned int shortestSpan();
     unsigned int longestSpan();
-    void addNumbers(const std::vector<int>& numbers);
+    void addNumbers(unsigned int range);
+    void display();
 private:
     std::vector<int> vec;
     unsigned int n;

@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:20:31 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/14 21:44:46 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/20 23:44:52 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main() {
     numbers.push_back(6);
     numbers.push_back(9);
 
-    int searchValue = -9;
+    int searchValue = 20;
 
     try {
         int result = easyfind(numbers, searchValue);
