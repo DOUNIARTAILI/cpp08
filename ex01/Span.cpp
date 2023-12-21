@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:39:07 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/21 05:11:24 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:19:45 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,17 +59,6 @@ unsigned int Span::longestSpan(){
     int max = *max_element(vec.begin(), vec.end());
     int min = *min_element(vec.begin(), vec.end());
     return (abs(max - min));
-}
- 
-void Span::addNumbers(unsigned int range){
-    srand(time(NULL));
-    if (this->vec.size() + range > n){
-        throw rangetoobig();
-    }
-    for (unsigned int i = 0; i < range; i++) {
-        vec.push_back(rand() % 80);
-    }
-    std::cout << "size after addnumbers : " << vec.size() << std::endl;
 }
 
 void Span::display(){

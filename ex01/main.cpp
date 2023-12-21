@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:38:46 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/20 23:57:51 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:15:45 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,14 @@ int main()
         std::cout << "longest Span : " << sp.longestSpan() << std::endl;
 
         Span spm = Span(5);
-        spm.addNumber(10);
-        spm.addNumber(20);
-        spm.addNumbers(3);
+        std::vector<int> v;
+        v.push_back(10);
+        v.push_back(20);
+        v.push_back(30);
+        v.push_back(40);
+        v.push_back(50);
+        spm.addNumbers(v.begin(), v.end());
+        // spm.addNumber(6);
         spm.display();
         std::cout << "shortest Span : " << spm.shortestSpan() << std::endl;
         std::cout << "longest Span : " << spm.longestSpan() << std::endl;

@@ -6,12 +6,20 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:20:28 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/20 23:45:42 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 20:52:28 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <algorithm>
 
+class not_found404 : public std::exception{
+    public:
+        virtual const char* what() const throw() {
+            return "Value not found in container !";
+        }
+};
+    
 template <typename T>
 int easyfind(T container, int value) {
     typename T::iterator it = std::find(container.begin(), container.end(), value);
@@ -19,6 +27,6 @@ int easyfind(T container, int value) {
     if (it != container.end()) {
         return *it;
     } else {
-        throw std::out_of_range("Value not found in container");
+        throw not_found404();
     }
 }

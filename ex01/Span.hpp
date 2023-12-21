@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:39:14 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/20 23:51:49 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:16:41 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,13 @@ public:
     void addNumber(int nb);
     unsigned int shortestSpan();
     unsigned int longestSpan();
-    void addNumbers(unsigned int range);
+    template <typename InputIt>
+    void addNumbers(InputIt begin, InputIt end) {
+        if (end - begin > n){
+            throw rangetoobig();
+        }
+        vec.insert(vec.end(), begin, end);
+    }
     void display();
 private:
     std::vector<int> vec;

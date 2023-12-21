@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 21:20:31 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/20 23:44:52 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 20:52:50 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main() {
     try {
         int result = easyfind(numbers, searchValue);
         std::cout << "Value found : " << result << std::endl;
-    } catch (const std::out_of_range& e) {
+    } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;
     }
 
