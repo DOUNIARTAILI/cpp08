@@ -6,13 +6,13 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:39:07 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/21 21:19:45 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:32:07 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(){
+Span::Span() : n(50){
 
 }
 Span::Span(unsigned int n){

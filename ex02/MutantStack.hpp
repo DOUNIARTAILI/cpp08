@@ -6,7 +6,7 @@
 /*   By: drtaili <drtaili@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 17:39:27 by drtaili           #+#    #+#             */
-/*   Updated: 2023/12/21 00:12:01 by drtaili          ###   ########.fr       */
+/*   Updated: 2023/12/21 21:36:17 by drtaili          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ public:
     {
         if (this != &other)
         {
-            std::stack<T>::operator=(other);
+            this->c = other.c;
         }
         return *this;
     }
