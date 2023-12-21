@@ -1,0 +1,102 @@
+container = data structure already defined, you can directly use it with all it's functions related to it , without you implementing it.
+before we needed to make a class (data structure) from scratch , data types ..
+but on top of that you can control the data type of this container 
+example: array stack queue list  
+
+algorithms :
+sort()
+min()
+max()
+swap()
+
+iterator : 
+is intermediare , is a pointer that will iterate between the elements 
+
+type of containers : 
+simple sequence associative unordered             adapter
+pair    array       map     unordered set         stack 
+        vector     multimap  unordered multiset   queue 
+         deque       set     unordered map        priority queue
+        list       multiset  unoredered multimap
+        forward list
+
+array: is a sequence container, because it was a bunch of elements of the same data type 
+vector: is a dynamic array fast in term of back insertion, we can resize it, so we won't loose space, so always the element should fit the size of the vector
+if we have a vector of 4 elements and we push a new one the vector of 4 will be deleted and new one is here with the new size that will fit all the current elements
+vector is a template class : vector<data type>v; v is an object with size equal to 0 by default 
+we don't need to make a size of a vector but we can do that by vector<data type>v(4);size equal to 4
+|0|0|0|0| default value of those elements by default is 0, the array's elements holds a garbage value by default.
+v[0] = 10; overiding on element 0
+v.push_back(50); |10|0|0|0|50| 
+other functions : pop_back insert erase swap clear front back size empty
+vector<int>v(5, 100); |100|100|100|100|100| 
+cout<< v2[0] >> 100
+cout<<  v.front() >> 100 the first element of the vector
+cout<<  v.back() >> 100 the last element of the vector
+v.at(0) == v[0] the difference is that at can throw an exception like out of range 
+size == capacity the diffrence is that : 
+vector<int>v(100); size=100 capacity=100
+v.push_back(50);
+size = 101 capacity=150, when we try to add a new element in the back the previous array will be removed
+and new one is always bigger than the before by 50%
+but if we have vector<int>v(1); size=1 
+v.push_back(54); in that case size=2 and capacity=2 we don't need to exceed the capacity | size should be > 3 to exceed the capacity.
+vector<int>v; every data type has max_size | cout << v.max_size() >> 1073741823 | double is smaller ..
+the data type is bigger the vector will accept less elements
+iterator: is like a pointer
+vector<int>v = {10,20,30,40}; 
+vector<int>::iterator it = v.begin(); // points here on the first element 
+it++;
+cout << *it => 20 
+v.end() => points on the element that came after the last element of the vector (out of range)
+v.end() - 1 => is the last element (40 in the example)
+rbegin() is 40 in that case we should use reverse iterator 
+vector<int>::reverse_iterator it;
+for (it = v.rbegin() ; it != v.rend(); it++){ // 40 30 20 10
+        cout << *it << endl;
+}
+crend and crbegin have same behavior of rend and rbegin, the difference is that those first 2
+work with a constant reverse iterator:
+vector<int>::const_reverse_iterator it;
+for (it = v.crbegin() ; it != v.crend(); it++){ // 40 30 20 10
+        cout << *it << endl;
+}
+and also cbegin and cend like end and begin but they return a constant iterator 
+vector<int>::const_iterator it;
+for (it = v.cbegin() ; it != v.cend(); it++){ // 10 20 30 40
+        cout << *it << endl;
+}
+insert : v.insert(position, value);
+v.insert(v.begin(), 55);
+v.emplace(position, value); emplace is faster than insert 
+v.emplace_back(position, value); insertion on the back
+v.erase(v.begin()) will erase the first element 10
+v.erase(v.begin() + 1, v.end()) will erase from the second elem til the end (20 30 40) leaving |10| only 
+size = 10;
+v.resize(newsize) 
+v.resize(5) but the element will not be removed still (in case of the old size is bigger than the new one)
+v.shrink_to_fit() it will destroy all the elemets after the index 5 making the container more fit 
+
+sort(v.begin(), v.end()) => sort the vector ascendent //1 2 3
+sort(v.rbegin(), v.rend()) => sort the vector descendent //3 2 1
+reverse(v.begin(), v.end()) it will print the elements of the vector from last to the begining
+min_element(v.begin(), v.end()) it return the adress of the minimum element
+max_element(v.begin(), v.end()) it return the adress of the maximum element
+minmax_element(v.begin(), v.end()) it returns the adress of the min and max in a pair variable
+auto pair = minmax_element(v.begin(), v.end());
+min = *pair.first() // 10
+max = *pair.second() // 40
+
+deque(deck): sequence container fast insertion/deletion front and back we can insert element from both size begining or last
+push_back() push_front() pop_back pop_front front back erase
+
+stack: container adapter is a container based on another container (vector deque list)
+last in first out 
+push emplace pop top empty size swap : implemented inside the stack
+
+
+
+ 
+
+
+
